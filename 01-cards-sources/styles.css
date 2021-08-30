@@ -26,7 +26,8 @@ body {
   border-radius: 20px;
   margin: 10px;
   cursor: pointer;
-  color: #fff;
+  color: lightskyblue;
+  text-shadow: red 0 0 2px;
   flex: 1;
   background-size: cover;
   background-position: center;
