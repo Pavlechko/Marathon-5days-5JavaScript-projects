@@ -64,7 +64,8 @@ body {
 }
 
 .hold {
-  border: 5px solid #eee;
+  background: linear-gradient(90deg, purple 0%, white 100%);  
+  border-radius: 33px;
 }
 
 .hide {
@@ -73,4 +74,7 @@ body {
 
 .hovered {
   border-top: 2px solid blueviolet;
+  border-bottom: 1px solid #229efd;
+  box-shadow: 4px 4px 9px gray;
+  border-radius: 33px;
 }
