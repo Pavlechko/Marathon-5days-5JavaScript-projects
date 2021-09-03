@@ -1,26 +1,40 @@
-const board = document.querySelector("#board"),
-      SQUARES_NUMBER = 500,
-      colors = ["red", "green", "pink", "aqua", "azure", "blue"]
+const board = document.querySelector("#board"),      
+      colors = ["red", "green", "pink", "aqua", "azure", "blue", "orange", "aquamarine", "blueviolet"],
+      input = document.querySelector("input"),
+      form = document.querySelector("form.add");
 
-for (let i = 0; i < SQUARES_NUMBER; i++) {
-    const square = document.createElement("div");
-    square.classList.add("square");
+let squareNumber = 500;
 
-    square.addEventListener("mouseover", () => {
-        setColor(square);
-    });
+drawSquares(squareNumber);
 
-    square.addEventListener("mouseleave", () => {
-        removeColor(square);
-    });
+form.addEventListener("submit", (e) => {
+    e.preventDefault();    
+    board.innerHTML = "";
+    squareNumber = input.value;
+    drawSquares(squareNumber);
+})
 
-    board.append(square);
+function drawSquares(squares) {
+    for (let i = 0; i < squares; i++) {
+        const square = document.createElement("div");
+        square.classList.add("square");
+    
+        square.addEventListener("mouseover", () => {
+            setColor(square);
+        });
+    
+        square.addEventListener("mouseleave", () => {
+            removeColor(square);
+        });
+    
+        board.append(square);
+    }
 }
 
 function setColor(element) {
     const indexColor = Math.floor(Math.random() * colors.length)
     element.style.backgroundColor = colors[indexColor];
-    element.style.boxShadow = `0 0 2px ${colors[indexColor]}, 0 0 20px ${colors[indexColor]}`
+    element.style.boxShadow = `0 0 2px ${colors[indexColor]}, 0 0 30px ${colors[indexColor]}`
 }
 
 function removeColor(element) {
